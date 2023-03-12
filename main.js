@@ -19,23 +19,27 @@ alert("Vamos a pedirte algunos datos personales para poder obtener un perfil de 
 let nivelDeRiesgo = Number(prompt("Cuentanos un poco sobre ti y tu nivel de aversion al riesgo contestando mediante esta simple escala de 1 a 10. \n\nSiendo: \n1 => 'Quiero minimizar todo tipo de riesgo' y \n10 => 'No tengo problemas en arriesgar mi capital'\n"));
 
 while (error = true){
-    let error = "";
 
     if (nivelDeRiesgo <= 0){
-        alert("Ups! El valor ingresado no puede ser '0' o negativo. \n\nPresiona ACEPTAR para volver a probar");
-        error = true
+        alert("Ups! Solo se permite escala del 1 al 10. \n\nPresiona ACEPTAR para volver a probar");
+        error = true;
+        nivelDeRiesgo = Number(prompt("Volver a ingresar: escala del 1 al 10"))
     }else if (nivelDeRiesgo <= 5){
         alert("Genial! Pese a tu bajo nivel de aversion al riesgo tenemos las mejores posibilidades para vos. \n\nPresiona ACEPTAR para continuar");
+        error = false;
         break;
     }else if (nivelDeRiesgo <= 8){
         alert("Excelente! Somos especialistas en perfiles equilibrados respecto a sus decisiones financieras. \n\nPresiona ACEPTAR para continuar");
+        error = false;
         break;
     }else if (nivelDeRiesgo <= 10){
         alert("Wow! Personas como tu logran grandes cambios a nivel financiero. Felicitaciones! \n\nPresiona ACEPTAR para continuar");
+        error = false;
         break;
     }else{
-        alert("Lo lamento, el valor ingresado debe estar comprendido entre 1 y 10");
-        error = true
+        alert("Ups! Solo se permite escala del 1 al 10. \n\nPresiona ACEPTAR para volver a probar");
+        error = true;
+        nivelDeRiesgo = Number(prompt("Volver a ingresar: escala del 1 al 10"))
     }
 }
 
